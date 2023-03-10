@@ -60,6 +60,7 @@ function sendJSONXMLHTTPRequest(url, objects, callback) {
         xhr.open('POST', url)
         body = JSON.stringify(objects);
     }
+    xhr.overrideMimeType("application/json")
     xhr.setRequestHeader("Content-Type", "application/json")
     xhr.setRequestHeader("Accept", "application/json")
     xhr.send(body)
@@ -285,7 +286,7 @@ function update() {
 }
 
 // 30 frames per second
-setInterval( update, 1000/60.0);
+setInterval( update, 1000/30.0);
 
 
 
